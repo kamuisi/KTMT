@@ -19,11 +19,10 @@ main:		li $v0, 4
 		add  $a2, $a2, $zero #tong
 		jal fibonacci
 		j exit
-fibonacci:	bne $a2, $zero, else
+fibonacci:
 		addi $sp, $sp, -4
 		sw $ra, 0($sp)
-		
-else:		add $a0, $a2, $zero
+		add $a0, $a2, $zero
 		li $v0, 1
 		syscall
 		li $v0, 4
